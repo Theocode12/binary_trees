@@ -33,7 +33,6 @@ bst_t *bst_insert(bst_t **tree, int value)
 				tmp_tree->right = new_node;
 				break;
 			}
-
 		else if (value < tmp_tree->n)
 			if (tmp_tree->left)
 				tmp_tree = tmp_tree->left;
@@ -42,7 +41,6 @@ bst_t *bst_insert(bst_t **tree, int value)
 				tmp_tree->left = new_node;
 				break;
 			}
-
 		else
 		{
 			free(new_node);
