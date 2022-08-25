@@ -14,7 +14,7 @@ binary_tree_t **create_queue(int *front, int *end)
 {
 	binary_tree_t **queue;
 
-	queue = malloc(MAX_QUEUE * sizeof(binary_tree_t *));
+	queue = calloc(MAX_QUEUE, sizeof(binary_tree_t *));
 	*front = *end = 0;
 	return (queue);
 }
