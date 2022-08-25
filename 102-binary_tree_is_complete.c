@@ -65,7 +65,10 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		{
 			/* if flag is true it means we've encountered an empty right node*/
 			if (flag)
+			{
+				free(queue);
 				return (0);
+			}
 
 			enqueue(queue, (binary_tree_t *)node->left, &end);
 		}
@@ -75,11 +78,15 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		if (node->right)
 		{
 			if (flag)
+			{
+				free(queue);
 				return (0);
+			}
 			enqueue(queue, (binary_tree_t *)node->right, &end);
 		}
 		else
 			flag = 1;
 	}
+	free(queue);
 	return (1);
 }
